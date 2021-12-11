@@ -1,4 +1,4 @@
-Feature: Launch Google Results page
+Feature: Launch Google Result page
   Launch Google page
   Search text and click on the link
 
