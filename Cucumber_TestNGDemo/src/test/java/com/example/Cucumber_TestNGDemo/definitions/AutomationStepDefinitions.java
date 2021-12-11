@@ -42,11 +42,11 @@ public class AutomationStepDefinitions {
     	extentreport.get().attachReporter(spark);
     	test = extentreport.get().createTest(scenario.getName());
     	extenttest.set(test);
-    	sheet = excelDataReader.getSheet(new File("C:\\Users\\suvic\\Documents\\Subba\\Automation\\eclipse-workspace\\Cucumber_TestNGDemo\\src\\test\\resources\\testdata\\testdata.xlsx"), scenario.getName().split("_")[1]);
+    	sheet = excelDataReader.getSheet(new File(System.getProperty("user.dir") + "\\src\\test\\resources\\testdata\\testdata.xlsx"), scenario.getName().split("_")[1]);
     	datasheet.set(sheet);
     	
     	//WebDriverManager.chromedriver().setup();
-    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\suvic\\Documents\\Subba\\Automation\\eclipse-workspace\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\drivers\\chromedriver.exe");
         //System.setProperty("webdriver.gecko.driver", "C:\\Users\\Vibha\\Software\\geckodriver-v0.26.0-win64\\geckodriver.exe");
     	
     	ChromeOptions options = new ChromeOptions();
@@ -71,16 +71,6 @@ public class AutomationStepDefinitions {
     	extenttest.get().pass("Clicks on I agree consent");
     	System.out.println("Column Name: " + searchText);
     	String inputText = excelDataReader.readByColumnName(datasheet.get(), searchText, Integer.parseInt(rowid));
-    	webdriver.get().findElement(By.xpath("//input[@title='Search']")).sendKeys(inputText);
-        extenttest.get().pass("input text " + inputText);
-    }
-    
-    @Then("^User searches for a text \"([^\"]*)\"$")
-    public void user_searches_for_a_text_something(String searchText) throws Exception, InvalidFormatException, IOException{
-    	webdriver.get().findElement(By.xpath("//div[text()='I agree']")).click();
-    	extenttest.get().pass("Clicks on I agree consent");
-    	System.out.println("Column Name: " + searchText);
-    	String inputText = excelDataReader.readByColumnName(datasheet.get(), searchText, 1);
     	webdriver.get().findElement(By.xpath("//input[@title='Search']")).sendKeys(inputText);
         extenttest.get().pass("input text " + inputText);
     }

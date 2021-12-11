@@ -15,7 +15,11 @@ Feature: Search Google page
       |     2 |
 
   @Test2
-  Scenario: TC_002_Search Google Page
+  Scenario Outline: TC_002_Search Google Page
     Given User launches Google page
-    Then User searches for a text "SearchText"
+    Then User searches for a text <RowID> "SearchText"
     And User clicks on Google search button
+
+    Examples: 
+      | RowID |
+      |     1 |
