@@ -1,6 +1,6 @@
 <?xml version = "1.0"encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name = "Demo" parallel="methods" thread-count="20">
+<suite name = "Demo">
   <test name = "Test Demo">
     <classes>
           <class name = "com.example.Cucumber_TestNGDemo.runner.TestRunner"/>
