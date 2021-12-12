@@ -38,7 +38,7 @@ public class AutomationStepDefinitions {
     	
     	extent = new ExtentReports();
     	extentreport.set(extent);
-    	ExtentSparkReporter spark = new ExtentSparkReporter("target/AutomationReports/" + scenario.getName() + "_" + scenario.getLine() + ".html");
+    	ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\test\\resources\\AutomationReports\\" + scenario.getName() + "_" + scenario.getLine() + ".html");
     	extentreport.get().attachReporter(spark);
     	test = extentreport.get().createTest(scenario.getName());
     	extenttest.set(test);

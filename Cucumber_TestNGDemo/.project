@@ -37,5 +37,10 @@
 			<type>1</type>
 			<location>C:/Users/suvic/Documents/Subba/Automation/eclipse-workspace/chromedriver.exe</location>
 		</link>
+		<link>
+			<name>src/test/resources/AutomationReports/NA.txt</name>
+			<type>1</type>
+			<location>C:/Users/suvic/Documents/Subba/NA.txt</location>
+		</link>
 	</linkedResources>
 </projectDescription>
